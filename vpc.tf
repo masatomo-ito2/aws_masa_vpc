@@ -1,7 +1,9 @@
+/*
 provider aws {
 	region = "ap-northeast-1"
 	alias = "japan"
 }
+*/
 
 provider aws {
 	region = "ap-southeast-2"
@@ -10,10 +12,12 @@ provider aws {
 
 # VPC in Japan
 module "vpc_japan" {
+	/*
 	providers = {
 		aws = aws.japan
 		region = "ap-northeast-1"
 	}
+	*/
 
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.55.0"
