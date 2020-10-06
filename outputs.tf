@@ -9,3 +9,7 @@ output "vpc_id" {
 output "public_subnets" {
 	value = module.masa_vpc.public_subnets
 }
+
+output "elastic_ip" {
+	value = module.masa_vpc.nat_public_ips
+}
