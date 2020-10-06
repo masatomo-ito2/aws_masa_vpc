@@ -8,7 +8,7 @@ provider aws {
 	alias = "sydney"
 }
 
-module "masa_vpc" {
+module "vpc_japan" {
 	providers = {
 		aws = aws.japan
 	}
@@ -17,7 +17,7 @@ module "masa_vpc" {
   version = "2.55.0"
   # insert the 14 required variables here
 
-  name = "masademo-vpc-core"
+  name = "masa-vpc-core"
 
   cidr = "10.0.0.0/16"
 
@@ -49,7 +49,7 @@ module "masa_vpc" {
 }
 
 # Create VPC in Sydney
-module "masa_vpc" {
+module "vpc_sydney" {
 	providers = {
 		aws = aws.sydney
 	}
@@ -58,7 +58,7 @@ module "masa_vpc" {
   version = "2.55.0"
   # insert the 14 required variables here
 
-  name = "masademo-vpc-core"
+  name = "masa-vpc-core"
 
   cidr = "10.0.0.0/16"
 
