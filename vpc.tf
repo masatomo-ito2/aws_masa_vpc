@@ -15,7 +15,6 @@ module "vpc_japan" {
 	/*
 	providers = {
 		aws = aws.japan
-		region = "ap-northeast-1"
 	}
 	*/
 
@@ -58,7 +57,6 @@ module "vpc_japan" {
 module "vpc_sydney" {
 	providers = {
 		aws = aws.sydney
-		region = "ap-southeast-2"
 	}
 
   source  = "terraform-aws-modules/vpc/aws"
