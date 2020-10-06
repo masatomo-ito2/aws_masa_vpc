@@ -6,4 +6,6 @@ module "ssh_sg" {
 
 	vpc_id = module.masa_vpc.default_vpc_id
 	name = "ssh"	
+
+	ingress_cidr_blocks  = [ "0.0.0.0/0" ]
 }
