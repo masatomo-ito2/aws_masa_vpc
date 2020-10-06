@@ -3,7 +3,7 @@ output "security_group_ssh" {
 }
 
 output "vpc_id" {
-	value = module.masa_vpc.default_vpc_id
+	value = module.masa_vpc.vpc_id
 }
 
 output "public_subnets" {
