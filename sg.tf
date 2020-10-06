@@ -2,7 +2,7 @@
 
 # SG in Japan
 module "ssh_sg_japan" {
-	provider = {
+	providers = {
 		aws = aws.japan
 	}
 
@@ -16,7 +16,7 @@ module "ssh_sg_japan" {
 
 # SG in Sydney
 module "ssh_sg_sydney" {
-	provider = {
+	providers = {
 		aws = aws.sydney
 	}
 
