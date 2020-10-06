@@ -1,8 +1,4 @@
 # Japan
-output "security_group_ssh_japan" {
-	value = module.ssh_sg_japan.this_security_group_id
-}
-
 output "vpc_id_japan" {
 	value = module.vpc_japan.vpc_id
 }
@@ -16,10 +12,6 @@ output "elastic_ip_japan" {
 }
 
 # Sydney
-output "security_group_ssh_sydney" {
-	value = module.ssh_sg_sydney.this_security_group_id
-}
-
 output "vpc_id_sydney" {
 	value = module.vpc_sydney.vpc_id
 }

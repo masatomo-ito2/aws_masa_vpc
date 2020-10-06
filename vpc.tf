@@ -49,20 +49,6 @@ module "vpc_japan" {
   }
 }
 
-# SG in Japan
-module "ssh_sg_japan" {
-	providers = {
-		aws = aws.japan
-	}
-
-	source  = "terraform-aws-modules/security-group/aws//modules/ssh"
-
-	vpc_id = module.vpc_japan.vpc_id
-	name = "ssh"	
-
-	ingress_cidr_blocks  = [ "0.0.0.0/0" ]
-}
-
 # Create VPC in Sydney
 module "vpc_sydney" {
 	providers = {
@@ -104,17 +90,3 @@ module "vpc_sydney" {
   }
 }
 
-
-# SG in Sydney
-module "ssh_sg_sydney" {
-	providers = {
-		aws = aws.sydney
-	}
-
-	source  = "terraform-aws-modules/security-group/aws//modules/ssh"
-
-	vpc_id = module.vpc_sydney.vpc_id
-	name = "ssh"	
-
-	ingress_cidr_blocks  = [ "0.0.0.0/0" ]
-}
