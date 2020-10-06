@@ -1,22 +1,11 @@
-/*
-provider aws {
-	region = "ap-northeast-1"
-	alias = "japan"
-}
-*/
-
 provider aws {
 	region = "ap-southeast-2"
 	alias = "sydney"
 }
 
 # VPC in Japan
+# This module is inheritaing AWS_DEFAULT_REGION.
 module "vpc_japan" {
-	/*
-	providers = {
-		aws = aws.japan
-	}
-	*/
 
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.55.0"
@@ -46,7 +35,7 @@ module "vpc_japan" {
   }
 
   vpc_tags = {
-    Name        = "masademo-vpc"
+    Name        = "masa-vpc"
     Owner       = "Masa Ito"
     Environment = "demo"
     TTL         = "-1"
@@ -54,6 +43,7 @@ module "vpc_japan" {
 }
 
 # Create VPC in Sydney
+# This module is using aliased aws provider pointing to sydney
 module "vpc_sydney" {
 	providers = {
 		aws = aws.sydney
@@ -87,7 +77,7 @@ module "vpc_sydney" {
   }
 
   vpc_tags = {
-    Name        = "masademo-vpc"
+    Name        = "masa-vpc"
     Owner       = "Masa Ito"
     Environment = "demo"
     TTL         = "-1"
