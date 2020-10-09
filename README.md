@@ -3,6 +3,10 @@
 This will create 2 vpcs. 
 1 in Japan, another in Sydney.
 
+
+**In order to provision 2 regions, you would need to set default region by `AWS_DEFAULT_REGION` environment variable.**
+
+
 VPC settings will be stored in terraform state file on TFC.
 Use `remote_state` to import VPC to your run.
 

@@ -14,6 +14,6 @@ variable ttl {
 	default = "-1"
 }
 
-variable public_subnet_tag = {
-	default "overridden-name-public"
+variable public_subnet_tag {
+	default = "overridden-name-public"
 }

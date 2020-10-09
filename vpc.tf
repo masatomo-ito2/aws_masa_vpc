@@ -25,7 +25,7 @@ module "vpc_japan" {
   single_nat_gateway = false
 
   public_subnet_tags = {
-    Name = var.public_subnet_tags
+    Name = var.public_subnet_tag
   }
 
   tags = {
@@ -67,7 +67,7 @@ module "vpc_sydney" {
   single_nat_gateway = false
 
   public_subnet_tags = {
-    Name = var.public_subnet_tags
+    Name = var.public_subnet_tag
   }
 
   tags = {
@@ -83,4 +83,4 @@ module "vpc_sydney" {
     TTL         = var.ttl
   }
 }
-
+	
