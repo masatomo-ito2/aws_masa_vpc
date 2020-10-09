@@ -11,7 +11,7 @@ module "vpc_japan" {
   version = "2.55.0"
   # insert the 14 required variables here
 
-  name = "masa-vpc-core"
+  name = "${var.prefix}-vpc-core"
 
   cidr = "10.0.0.0/16"
 
@@ -25,20 +25,20 @@ module "vpc_japan" {
   single_nat_gateway = false
 
   public_subnet_tags = {
-    Name = "overridden-name-public"
+    Name = var.public_subnet_tags
   }
 
   tags = {
-    Owner       = "Masa Ito"
-    Environment = "demo"
-    TTL         = "-1"
+    owner       = var.owner
+    environment = var.environment
+    TTL         = var.ttl
   }
 
   vpc_tags = {
-    Name        = "masa-vpc"
-    Owner       = "Masa Ito"
-    Environment = "demo"
-    TTL         = "-1"
+    Name        = "${var.prefix}-vpc"
+    owner       = var.owner
+    environment = var.environment
+    TTL         = var.ttl
   }
 }
 
@@ -53,7 +53,7 @@ module "vpc_sydney" {
   version = "2.55.0"
   # insert the 14 required variables here
 
-  name = "masa-vpc-core"
+  name = "${var.prefix}-vpc-core"
 
   cidr = "10.0.0.0/16"
 
@@ -67,20 +67,20 @@ module "vpc_sydney" {
   single_nat_gateway = false
 
   public_subnet_tags = {
-    Name = "overridden-name-public"
+    Name = var.public_subnet_tags
   }
 
   tags = {
-    Owner       = "Masa Ito"
-    Environment = "demo"
-    TTL         = "-1"
+    owner       = var.owner
+    environment = var.environment
+    TTL         = var.ttl
   }
 
   vpc_tags = {
-    Name        = "masa-vpc"
-    Owner       = "Masa Ito"
-    Environment = "demo"
-    TTL         = "-1"
+    Name        = "${var.prefix}-vpc"
+    owner       = var.owner
+    environment = var.environment
+    TTL         = var.ttl
   }
 }
 
