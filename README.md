@@ -1,9 +1,20 @@
-# Masa's vpc for demo
+# VPC for demo use
 
-Always use this vpc for demo.
+This will create 2 vpcs. 
+1 in Japan, another in Sydney.
 
-This will create 2 vpc. 
-1 in Japan, another one in Sydney.
+VPC settings will be stored in terraform state file on TFC.
+Use `remote_state` to import VPC to your run.
 
-Predefined Secureity groups (Ingress):
-* SSH
+```HCL
+data terraform_remote_state "this" {
+  backend = "remote"
+
+  config = {
+    organization = var.tfc_org
+    workspaces = {
+      name = var.tfc_ws
+    }
+  }
+}
+```

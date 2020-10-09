@@ -7,10 +7,6 @@ output "public_subnets_japan" {
 	value = module.vpc_japan.public_subnets
 }
 
-output "elastic_ip_japan" {
-	value = module.vpc_japan.nat_public_ips
-}
-
 # Sydney
 output "vpc_id_sydney" {
 	value = module.vpc_sydney.vpc_id
@@ -18,8 +14,4 @@ output "vpc_id_sydney" {
 
 output "public_subnets_sydney" {
 	value = module.vpc_sydney.public_subnets
-}
-
-output "elastic_ip_sydney" {
-	value = module.vpc_sydney.nat_public_ips
 }
