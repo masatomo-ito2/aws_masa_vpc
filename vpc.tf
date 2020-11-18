@@ -32,6 +32,7 @@ module "vpc_japan" {
     owner       = var.owner
     environment = var.environment
     TTL         = var.ttl
+		terraform 	= true
   }
 
   vpc_tags = {
