@@ -75,6 +75,7 @@ module "vpc_sydney" {
     owner       = var.owner
     environment = var.environment
     TTL         = var.ttl
+		terraform 	= true
   }
 
   vpc_tags = {
