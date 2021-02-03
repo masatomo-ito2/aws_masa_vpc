@@ -1,19 +1,23 @@
-variable owner {
-	default = "Masa"
+variable "owner" {
+  type = string
 }
 
-variable environment {
-	default = "demo"
+variable "environment" {
+  type = string
 }
 
-variable prefix {
-	default = "masa"
+variable "prefix" {
+  type = string
 }
 
-variable ttl {
-	default = "-1"
+variable "ttl" {
+  type = string
 }
 
-variable public_subnet_tag {
-	default = "overridden-name-public"
+variable "public_subnet_tag" {
+  type = string
+}
+
+variable "private_subnet_tag" {
+  type = string
 }

@@ -1,6 +1,6 @@
-provider aws {
-	region = "ap-southeast-2"
-	alias = "sydney"
+provider "aws" {
+  region = "ap-southeast-2"
+  alias  = "sydney"
 }
 
 # VPC in Japan
@@ -21,9 +21,15 @@ module "vpc_japan" {
 
   enable_ipv6 = true
 
-  enable_nat_gateway = false
-  single_nat_gateway = false
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 
+  enable_nat_gateway = true
+  single_nat_gateway = true
+
+  private_subnet_tags = {
+    Name = var.private_subnet_tag
+  }
   public_subnet_tags = {
     Name = var.public_subnet_tag
   }
@@ -32,7 +38,7 @@ module "vpc_japan" {
     owner       = var.owner
     environment = var.environment
     TTL         = var.ttl
-		terraform 	= true
+    terraform   = true
   }
 
   vpc_tags = {
@@ -46,9 +52,9 @@ module "vpc_japan" {
 # Create VPC in Sydney
 # This module is using aliased aws provider pointing to sydney
 module "vpc_sydney" {
-	providers = {
-		aws = aws.sydney
-	}
+  providers = {
+    aws = aws.sydney
+  }
 
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.55.0"
@@ -64,9 +70,15 @@ module "vpc_sydney" {
 
   enable_ipv6 = true
 
-  enable_nat_gateway = false
-  single_nat_gateway = false
+  enable_dns_hostnames = true
+  enable_dns_support   = true
 
+  enable_nat_gateway = true
+  single_nat_gateway = true
+
+  private_subnet_tags = {
+    Name = var.private_subnet_tag
+  }
   public_subnet_tags = {
     Name = var.public_subnet_tag
   }
@@ -75,7 +87,7 @@ module "vpc_sydney" {
     owner       = var.owner
     environment = var.environment
     TTL         = var.ttl
-		terraform 	= true
+    terraform   = true
   }
 
   vpc_tags = {
@@ -85,4 +97,4 @@ module "vpc_sydney" {
     TTL         = var.ttl
   }
 }
-	
+
