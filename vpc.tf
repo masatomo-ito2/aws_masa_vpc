@@ -113,7 +113,7 @@ data "aws_arn" "peer" {
 resource "hcp_aws_network_peering" "peer" {
   hvn_id              = data.hcp_hvn.hcp_vault_hvn.hvn_id
   peer_vpc_id         = module.vpc_japan.vpc_id
-  peer_account_id     = module.vpc_japana.vpc_owner_id
+  peer_account_id     = module.vpc_japan.vpc_owner_id
   peer_vpc_region     = data.aws_arn.peer.region
   peer_vpc_cidr_block = module.vpc_japan.vpc_cidr_block
 }
