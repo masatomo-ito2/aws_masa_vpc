@@ -107,7 +107,7 @@ data "hcp_hvn" "hcp_vault_hvn" {
 
 # Peering
 data "aws_arn" "peer" {
-  arn = module.vpc_japan.arn
+  arn = module.vpc_japan.vpc_arn
 }
 
 resource "hcp_aws_network_peering" "peer" {
