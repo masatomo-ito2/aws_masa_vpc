@@ -21,3 +21,10 @@ variable "public_subnet_tag" {
 variable "private_subnet_tag" {
   type = string
 }
+
+# HCP Vault
+variable "hvn_id" {
+  description = "The ID of the HCP HVN."
+  type        = string
+  default     = "hcp-vault-hvn"
+}
