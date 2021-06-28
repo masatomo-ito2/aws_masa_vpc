@@ -130,3 +130,16 @@ resource "aws_vpc_peering_connection_accepter" "peer" {
   auto_accept               = true
 }
 
+# route table
+resource "aws_route_table" "hvn_peering" {
+  vpc_id = module.vpc_japan.vpc_id
+
+  route {
+    cidr_block = data.hcp_hvn.hcp_vault_hvn.cidr_block
+		vpc_peering_connection_id = hcp_aws_network_peering.peer.provider_peering_id
+  }
+
+  tags = {
+    Name = "HVN peering"
+  }
+}
