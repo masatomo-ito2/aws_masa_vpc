@@ -28,3 +28,7 @@ variable "hvn_id" {
   type        = string
   default     = "hcp-vault-hvn"
 }
+
+variable "hvn_peering_id" {
+	type = string
+}

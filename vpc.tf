@@ -10,7 +10,7 @@ provider "aws" {
 module "vpc_japan" {
 
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.55.0"
+	version = "3.1.0"
   # insert the 14 required variables here
 
   name = "${var.prefix}-vpc-core"
@@ -59,7 +59,7 @@ module "vpc_sydney" {
   }
 
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.55.0"
+	version = "3.1.0"
   # insert the 14 required variables here
 
   name = "${var.prefix}-vpc-core"
@@ -112,10 +112,18 @@ data "aws_arn" "peer" {
 
 resource "hcp_aws_network_peering" "peer" {
   hvn_id              = data.hcp_hvn.hcp_vault_hvn.hvn_id
+	peering_id = var.hvn_peering_id
   peer_vpc_id         = module.vpc_japan.vpc_id
   peer_account_id     = module.vpc_japan.vpc_owner_id
   peer_vpc_region     = data.aws_arn.peer.region
-  peer_vpc_cidr_block = module.vpc_japan.vpc_cidr_block
+}
+
+resource "hcp_hvn_route" "peering-route" {
+  hvn_link = hcp_hvn.hvn.self_link
+  // you can find this ID in the HCP Portal in the peering details page in the list of routes
+  hvn_route_id     = "a8dda9a8-0f69-4fa0-b38c-55be302fdddb"
+  destination_cidr = module.vpc_japan.vpc_cidr_block
+  target_link      = hcp_aws_network_peering.peering.self_link
 }
 
 resource "aws_vpc_peering_connection_accepter" "peer" {
