@@ -30,5 +30,10 @@ variable "hvn_id" {
 }
 
 variable "hvn_peering_id" {
-	type = string
+  type = string
 }
+
+variable "hvn_route_id" {
+  type = string
+}
+
