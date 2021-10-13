@@ -34,5 +34,15 @@ output "vault_info" {
 
   value = <<EOF
 cloud_provider = ${local.v.cloud_provider}
+created_at = ${local.v.created_at}
+hvn_id = ${local.v.hvn_id}
+organization_id = ${local.v.organization_id}
+project_id = ${local.v.project_id}
+min_vault_version = ${local.v.min_vault_version}
+vault_version = ${local.v.vault_version}
+namespace = ${local.v.namespace}
+region = ${local.v.region}
+tier = ${local.v.tier}
+public_endpoint = ${local.v.public_endpoint}
 EOF
 }
