@@ -100,9 +100,14 @@ module "vpc_sydney" {
   }
 }
 
-# HCP Vault
+# HCP HVN
 data "hcp_hvn" "hcp_vault_hvn" {
   hvn_id = var.hvn_id
+}
+
+# HCP Vault cluster
+data "hcp_vault_cluster" "vault_cluster" {
+  cluster_id = var.vault_cluster_id
 }
 
 # Peering
@@ -135,8 +140,8 @@ resource "aws_route_table" "hvn_peering" {
   vpc_id = module.vpc_japan.vpc_id
 
   route {
-    cidr_block = data.hcp_hvn.hcp_vault_hvn.cidr_block
-		vpc_peering_connection_id = hcp_aws_network_peering.peer.provider_peering_id
+    cidr_block                = data.hcp_hvn.hcp_vault_hvn.cidr_block
+    vpc_peering_connection_id = hcp_aws_network_peering.peer.provider_peering_id
   }
 
   tags = {

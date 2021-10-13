@@ -37,3 +37,6 @@ variable "hvn_route_id" {
   type = string
 }
 
+variable "vault_cluster_id" {
+  type = string
+}
