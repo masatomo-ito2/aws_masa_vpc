@@ -12,11 +12,11 @@ output "vpc_arn_japan" {
 }
 
 output "vpc_owner_id_japan" {
-	value = module.vpc_japan.vpc_owner_id
+  value = module.vpc_japan.vpc_owner_id
 }
 
 output "vpc_cidr_block_japan" {
-	value = module.vpc_japan.vpc_cidr_block"
+  value = module.vpc_japan.vpc_cidr_block
 }
 
 # Sydney
@@ -33,9 +33,9 @@ output "vpc_arn_sydney" {
 }
 
 output "vpc_owner_id_sydney" {
-	value = module.vpc_sydney.vpc_owner_id
+  value = module.vpc_sydney.vpc_owner_id
 }
 
 output "vpc_cidr_block_sydney" {
-	value = module.vpc_sydney.vpc_cidr_block"
+  value = module.vpc_sydney.vpc_cidr_block
 }
