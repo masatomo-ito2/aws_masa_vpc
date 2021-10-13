@@ -19,6 +19,10 @@ output "vpc_cidr_block_japan" {
   value = module.vpc_japan.vpc_cidr_block
 }
 
+output "vpc_main_route_table_id_japan" {
+	value = module.vpc_japan.vpc_main_route_table_id
+}
+
 # Sydney
 output "vpc_id_sydney" {
   value = module.vpc_sydney.vpc_id
@@ -38,4 +42,8 @@ output "vpc_owner_id_sydney" {
 
 output "vpc_cidr_block_sydney" {
   value = module.vpc_sydney.vpc_cidr_block
+}
+
+output "vpc_main_route_table_id_sydney" {
+	value = module.vpc_sydney.vpc_main_route_table_id
 }
