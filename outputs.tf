@@ -23,6 +23,7 @@ output "vpc_main_route_table_id_japan" {
   value = module.vpc_japan.vpc_main_route_table_id
 }
 
+/*
 # Sydney
 output "vpc_id_sydney" {
   value = module.vpc_sydney.vpc_id
@@ -48,3 +49,4 @@ output "vpc_main_route_table_id_sydney" {
   value = module.vpc_sydney.vpc_main_route_table_id
 }
 
+*/
