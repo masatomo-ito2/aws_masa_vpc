@@ -67,6 +67,7 @@ resource "aws_default_subnet" "default_jp" {
 # Create VPC in Sydney
 # This module is using aliased aws provider pointing to sydney
 
+/*	
 module "vpc_sydney" {
   providers = {
     aws = aws.sydney
@@ -113,3 +114,4 @@ module "vpc_sydney" {
     TTL         = var.ttl
   }
 }
+*/
