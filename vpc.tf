@@ -15,14 +15,16 @@ module "vpc_japan" {
 
   cidr = "10.0.0.0/16"
 
-  azs            = ["ap-northeast-1a"]
-  public_subnets = ["10.0.1.0/24"]
+  azs             = ["ap-northeast-1a"]
+  public_subnets  = ["10.0.1.0/24"]
   private_subnets = ["10.0.101.0/24"]
 
   # enable_ipv6 = true
 
   enable_dns_hostnames = true
   enable_dns_support   = true
+
+  create_igw = true
 
   enable_nat_gateway = true
   single_nat_gateway = true
