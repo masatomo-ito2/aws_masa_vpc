@@ -16,8 +16,8 @@ module "vpc_japan" {
   cidr = "10.0.0.0/16"
 
   azs             = ["ap-northeast-1a"]
-  private_subnets = ["10.0.1.0/24"]
-  public_subnets  = ["10.0.101.0/24"]
+  public_subnets  = ["10.0.1.0/24"]
+  private_subnets = ["10.0.101.0/24"]
 
   # enable_ipv6 = true
 
@@ -65,8 +65,8 @@ module "vpc_sydney" {
   cidr = "10.0.0.0/16"
 
   azs             = ["ap-southeast-2a"]
-  private_subnets = ["10.0.1.0/24"]
-  public_subnets  = ["10.0.101.0/24"]
+  public_subnets  = ["10.0.1.0/24"]
+  private_subnets = ["10.0.101.0/24"]
 
   # enable_ipv6 = true
 
