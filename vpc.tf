@@ -17,7 +17,7 @@ module "vpc_japan" {
 
   azs            = ["ap-northeast-1a"]
   public_subnets = ["10.0.1.0/24"]
-  #private_subnets = ["10.0.101.0/24"]
+  private_subnets = ["10.0.101.0/24"]
 
   # enable_ipv6 = true
 
@@ -55,6 +55,7 @@ module "vpc_japan" {
 
 # Create VPC in Sydney
 # This module is using aliased aws provider pointing to sydney
+/*
 module "vpc_sydney" {
   providers = {
     aws = aws.sydney
@@ -70,7 +71,7 @@ module "vpc_sydney" {
 
   azs             = ["ap-southeast-2a"]
   public_subnets  = ["10.0.1.0/24"]
-  private_subnets = ["10.0.101.0/24"]
+  #private_subnets = ["10.0.101.0/24"]
 
   # enable_ipv6 = true
 
@@ -101,3 +102,4 @@ module "vpc_sydney" {
     TTL         = var.ttl
   }
 }
+*/
