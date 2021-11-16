@@ -22,3 +22,7 @@ variable "private_subnet_tag" {
   type = string
 }
 
+variable "region" {
+  type    = string
+  default = "ap-northeast-1"
+}

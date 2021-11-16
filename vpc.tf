@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-southeast-2"
+  region = var.region
   alias  = "sydney"
 }
 
@@ -15,7 +15,7 @@ module "vpc_japan" {
 
   cidr = "10.0.0.0/16"
 
-  azs             = ["ap-northeast-1a"]
+  azs             = ["${var.region}a"]
   public_subnets  = ["10.0.1.0/24"]
   private_subnets = ["10.0.101.0/24"]
 
@@ -52,6 +52,15 @@ module "vpc_japan" {
     owner       = var.owner
     environment = var.environment
     TTL         = var.ttl
+  }
+}
+
+resource "aws_default_subnet" "default_jp" {
+  availability_zone       = "${var.region}a"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "Default subnet for ap-northeast-1"
   }
 }
 
