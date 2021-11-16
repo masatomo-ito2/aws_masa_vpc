@@ -27,6 +27,10 @@ module "vpc_japan" {
   enable_nat_gateway = true
   single_nat_gateway = true
 
+
+  private_subnet_suffix = "masa_private"
+  public_subnet_suffix  = "masa_public"
+
   private_subnet_tags = {
     Name = var.private_subnet_tag
   }
